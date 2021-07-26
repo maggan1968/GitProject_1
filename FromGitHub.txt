@@ -1,1 +1,3 @@
 This is the file added directly from GitHub.com
+
+this is more text Iam adding from gitHub.com
