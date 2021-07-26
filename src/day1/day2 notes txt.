@@ -1,0 +1,141 @@
+
+## IntelliJ Support for Git & GitHub
+
+### Create local repository and commit changes
+
+- Create a new Java project called `GitPractice_1`
+- Add a package under the source folder called `day1`
+- Add a class called `[HelloWorld.java](http://helloworld.java)` and add the main method print hello world and run it
+- You will see `out` folder is generated under your project structure
+- Before We DO ANYTHING, WE NEED TO CREATE GIT REPOSITORY!!!!! or nothing will work.
+    - From the top menu, `VCS`-> `Enable Version Control Integration` and select `git` from the option in the next pop-up. It will create a git repository for your project
+    - Observe the `VCS` menu name has been changed to `git` instead
+    - We want to add `.gitignore` file to ignore
+        - `.idea` and `out` folders
+        - `GitPractice_1.iml` file  (or just `*.iml` to ignore any file with `.iml` extension.
+    - Right click on the project name on the left , select `new` → `file`  give a name `.gitignore` and hit enter to create the file.
+    - Add `.idea` folder , `out` folder and `*.iml` separated by new line
+        - The alternative way to do this is by selecting those 2 folders and files together by holding on to Command on mac and control on windows and
+            - Right Click → `git` → `Add to .gitignore` → `Add to .gitignore` file
+            - It will automatically create `.gitignore` file and those 3 files as content in 3 lines
+            - Accept any pop-up that shows up in the middle
+
+        ```
+        # This should be the content of git ignore (this line is comment with #)
+        .idea
+        out
+        # * here means everything , so below will ignore any file with extention iml
+        *.iml
+        ```
+
+    - Now we are ready to make the first commit.
+    - From the top menu - >  Select `git` → `commit`  (or `Commamd+K` on mac |  `Ctrl +K` on Win)
+        - You will either see the commit window on the left side or as a pop-up window (it will not matter which way it shows, it will do the commit the same way)
+    - **Select all the checkboxes to select all** because we already ignored anything but the source code.
+        - In your scenario, you will see `.gitignore` and `[HelloWorld.java](http://helloworld.java)` from the list
+    - Provide commit message as `initial commit` and click the commit
+    - Now you can add more changes to your code and commit again the same way.
+    - From the bottom left corner, you will see a `git` tab, click on it, and click on the `log` you will see the history of your commits  (You may also do this from `git` menu → `show git log`)
+
+### Set up GitHub account in IntelliJ
+
+- Set up your GitHub Account in IntelliJ
+- Go to IntelliJ `Preference` on mac or `Settings` on windows
+- Select `Version Control` from left tab , expand the tab and select `GitHub`
+- Click on `Add Account` It will prompt to login from browser, Go ahead and login and say yes to any pop-ups until it says successful from browser and check your account is added in GitHub
+
+### Share your project to GitHub
+
+Assuming that you have
+
+- created local repository
+- added `.gitignore` file
+- made your first commit(or few commits)
+- successfully added your `[Github.com](http://github.com)` account in IntelliJ
+
+It's time to share project on GitHub
+
+- From the top menu select `Git`→ `GitHub` → `Share Project on GitHub`
+- from the new pop up , you have option to provide different name and change the visibility of the GitHub repository and provide additional description. ***all of them are optional***
+- At this point you can go ahead and click on `Share` Button
+- A success message with **direct link to your GitHub repository** will display on right bottom corner
+- Click on the link to directly navigate to your repository
+    - If you have made it private earlier and you are not logged in to your GitHub account on the browser you will get 404 error because private repositories only visible to owner
+
+**Share Project on GitHub** actually doing below 3 steps in one shot
+1. Create new [Github.com](http://github.com) remote repository under your account
+2. Connect your local repository to remote repository created above
+3. Push your local repository commits to remote repository
+
+Since the connection between local repository and remote repository already been established, all you have to do from this point on is make more commits locally and `push` it to the remote repository.
+
+
+
+- Make 5 more commits and push to remote
+- Observe the commits are moving along with master / origin master does not move
+- Now push to the remote and see the changes in [GitHub.com](http://github.com) and observe local master and remote master is in sync
+
+### `Pull` the remote changes we do not have locally from the remote repo
+
+- Create a file in your [Github.com](http://github.com) repository called `FromGitHub.txt` and commit there
+- In IntelliJ `fetch` the information and observe the log
+- `Pull` the changes by clicking on `Update Project` or `pull` from `git` menu
+
+---
+
+ **HEAD is a pointer or reference to current point in the git history**
+
+### Moving HEAD in commit history using `Checkout`
+
+### Resetting History to certain point using `Reset`
+
+- Make sure you checkout master to be on latest commit on master
+- Create a new class called `ResettingPractice`
+- Make 5 commits with below commit messages
+    - Test case part1 is done
+    - Test case part2 is done
+    - Test case part3 is done
+    - Test case part4 is done
+    - Test case part5 is done
+
+It's time we see different reset option
+
+- You can reset the history to certain point by dropping all the commits after certain point in history
+- You have option to delete all the content in that change or keep the change just delete the commits  —  Reset hard | Reset Mixed
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dce9cb43-6dfc-419b-9c69-ee25d9263508/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dce9cb43-6dfc-419b-9c69-ee25d9263508/Untitled.png)
+
+    ## `Cloning` remote repository to local
+
+    You want to get the repository from [Github.com](http://github.com) to your local computer will all git history if you do not have on your local.
+
+    You can get the clone URL from repository homepage under Great code button
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12e7a59d-3466-440b-9ead-a294e6a44403/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12e7a59d-3466-440b-9ead-a294e6a44403/Untitled.png)
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a6c99d8-793d-4482-adf6-46bee9d79862/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6a6c99d8-793d-4482-adf6-46bee9d79862/Untitled.png)
+
+    This is the **one time process** to get remote repository to your local repository and create the connection , if this Github repo belong to you , you can keep pushing more commits just like you would any other time.
+
+    ---
+
+
+
+    # Branching in Git
+
+    ### Task 1
+
+    - Create a new branch called `feature-a` and checkout
+    - Create a new class called `Awork`
+    - make 5 commits with proper message
+    - move your `HEAD` to master —> `checkout` master
+    - from the `git` menu → `merge`  from option select `--no --ff`
+    - and click merge and observe the history
+    - —no —ff option will create new merge commit to reflect this merge activity
+
+    - Create a new branch called `us-100`
+    - Add a package called `us100` add a class `TC1`
+    - make two commits by making some changes
+    - `checkout` the master to move your `HEAD` to master
+    - from the `git` menu → `merge`  from option select `--no --ff`
+    - and click merge and observe the history
