@@ -6,3 +6,5 @@ this is more stuff I added from remote
 
 this is more text Iam adding from gitHub.com
 this is cool commit from local
+
+text file with diffrent content
