@@ -4,6 +4,7 @@ public class SetPractice {
     public static void main(String[] args) {
         // set is  a collection type that only store unique item
         // if you duplicate it will just remove it
+        // its a collection of unique elements
     }
 
 }
