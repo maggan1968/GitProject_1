@@ -7,5 +7,5 @@ public class Conflict {
     //I can type anything here
     // This is collection branch content
     //next step in collection,
-
+// more work on collection2
 }
