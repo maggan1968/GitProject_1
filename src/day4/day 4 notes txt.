@@ -1,0 +1,52 @@
+
+Day 4
+Recap
+Merge Conflict - can happen while you have commits in your master branch that the feature branch you are working on , and both of the commits editing same file with different contect
+
+Four ways to resolve
+Abort merge
+Accept Theirs (keep feature branch version)
+Accept Yours (keep the master branch version)
+Merge (have custom output)
+Task 1
+Make sure you head is on master and there is no uncommitted changes
+
+Create a branch called collection
+Create new package called day4.
+Create a new class called Conflict
+Make a commit for creating file
+Add this text inside main method as comment : This is collection branch content
+commit this change with meaningful commit message
+Move your HEAD to master
+Create a package with same name called day4
+Create a new class with same name Conflict
+Edit the file with the text inside This is master branch content
+Make a commit and merge --> BOOM --> CONFLICT!!! resolve it
+In our case , we used last option with custom output as merge result
+Task 2
+create a new branch called collection2
+Add a comment in the class Conflict with this message MORE WORK ON COLLECTION2
+Commit this change
+Checkout master
+Add a different comment in the class Conflict with This is the change collection2 branch does not know about
+Commit this change into master
+Now merge the collection2 branch and boom! Conflict!!
+GitHub Flow
+A light weight flow for collaboration
+
+Create a branch called us-100
+Add a class called TC001 under day4 package
+Make few commits with good commit message
+NOW: Push your branch to remote
+This will push your local us-100 branch to remote (newly created)origin/us-100 branch
+Now go to your GitHub repository main page and observe Green Compare and Open Pull Request button show up.
+Click on it and it will open up pull request creation page
+Add subject to describe what this change is about
+Provide description in description section for more information
+And Click Create Pull request
+This is where conversation , code review can happen
+After all the review , team-member or assigned person can merge your code so it can be in origin/master
+Now back to IntelliJ ,
+checkout master branch
+pull down the changes by going to git->update project
+Now you are in sync with the remote
